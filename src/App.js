@@ -1,24 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
 function App() {
+  const [userQuery, setUserQuery] = useState('');
+
+  const updateUserQuery = event => {
+    console.log('setUserQuery', userQuery)
+    setUserQuery(event.target.value);
+  };
+
+  const handleKeyPress = event => {
+    if (event.key === 'Enter') {
+      searchQuery()
+    }
+  }
+
+  const searchQuery = () => {
+    window.open(`https://google.com/search?q=${userQuery}`, '_');
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Good Morning</h1>
+      <div className="form">
+        <input 
+          value={userQuery}
+          onChange={updateUserQuery}
+          onKeyPress={handleKeyPress}
+        />
+        <button
+          onClick={searchQuery}
+        >Search</button>
+      </div>
     </div>
   );
 }
