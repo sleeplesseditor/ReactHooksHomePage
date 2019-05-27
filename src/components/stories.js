@@ -1,27 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useFetch } from '../Hooks';
 
 export default function Stories() {
-    const [stories, setStories] = useState([]);
-
-    useEffect(() => {
-        fetch('https://news-proxy-server.appspot.com/topstories')
-        .then(response => response.json())
-            .then(json => {
-                console.log('top stories json', json);
-                setStories(json);
-            });
-    }, []) 
+    const stories = useFetch('https://news-proxy-server.appspot.com/topstories', []);
 
     return (
         <div className="Stories">
-            <h3>HackerNews Stories</h3>
+            <h2>HackerNews Stories</h2>
             {
                 stories.map(story => {
                     const { id, by, time, title, url, } = story;
 
                     return (
                         <div key={id}>
-                            <a href={url}>{title}</a>
+                            <a href={url}><strong>{title}</strong></a>
                             <div>{by} – {new Date(time * 1000).toLocaleString()}</div>
                         </div>
                     )

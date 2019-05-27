@@ -21,6 +21,21 @@ input {
   height: 19px;
   font-size: 16px;
   margin: 1px;
+  border-radius: 15px;
+}
+
+.search-button {
+  border-radius: 15px;
+  color: #fff;
+  background-color: rgb(255, 62, 62);
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+  padding: 5px;
+  margin: 3px;
+}
+
+.search-button:hover {
+  background-color: rgb(255, 0, 0);
 }
 
 .form > input {
@@ -80,6 +95,19 @@ button {
 
 .Stories > div {
   margin: 15px;
+}
+
+.Stories > div > a {
+  text-decoration: none;
+  color: rgb(136, 136, 136);
+  transition: all .2s ease-in-out;
+  font-size: 19px;
+  cursor: pointer;
+}
+
+.Stories > div > a:hover {
+  text-decoration: none;
+  color: #000;
 }
 
 .Matrix > img {

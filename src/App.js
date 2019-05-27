@@ -31,6 +31,7 @@ function App() {
         />
         <button
           onClick={searchQuery}
+          className="search-button"
         >Search</button>
       </div>
       <hr />
