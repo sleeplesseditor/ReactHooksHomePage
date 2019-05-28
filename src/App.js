@@ -30,7 +30,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Good Morning</h1>
+      <h1>Welcome</h1>
       <div className="form">
         <input 
           value={userQuery}
