@@ -3,6 +3,7 @@ import NewJoke from './components/joke';
 import Stories from './components/stories';
 import Tasks from './components/tasks';
 import Gallery from './components/gallery';
+import Matrix from './components/matrix';
 
 function App() {
   const [userQuery, setUserQuery] = useState('');
@@ -59,6 +60,8 @@ function App() {
       </div>
       <hr />
       <Stories />
+      <hr />
+      <Matrix />
     </div>
   );
 }
