@@ -19,12 +19,12 @@ const readStoredTasks = () => {
 function Tasks() {
     const [taskText, setTaskText] = useState('');
     const storedTasks = readStoredTasks();
-    const [tasks, setTasks] = useState(storeTasks.tasks);
+    const [tasks, setTasks] = useState(storedTasks.tasks);
     const [completedTasks, setCompletedTasks] = useState(storedTasks.completedTasks);
 
     useEffect(() => {
         storeTasks({ tasks, completedTasks });
-    })
+    });
 
     const updateTaskText = event => {
         setTaskText(event.target.value);
